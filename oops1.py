@@ -72,72 +72,7 @@ class Cse:
         return str((self.java+self.c+self.python)/3) +"%"
 abd1=Cse(56,78,98)
 print(abd1.percentage)
-class Book:
-    def __init__(self,title,author):
-        self.title=title
-        self.author=author
-        self.status='available'
 
-    def borrow(self):
-        if self.status == 'available':
-            self.status = 'borrowed'
-            return True
-        return False
-
-    def return_book(self):
-        if self.status == 'borrowed':
-            self.status = 'available'
-            return True
-        return False
-
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def add_book(self, book):
-        self.books.append(book)
-
-    def display_available_books(self):
-        available_books = [book for book in self.books if book.status == 'available']
-        if available_books:
-            print("Available Books:")
-            for book in available_books:
-                print(f"{book.title} by {book.author}")
-        else:
-            print("No books available.")
-
-    def borrow_book(self, title):
-        for book in self.books:
-            if book.title == title and book.borrow():
-                print(f"You borrowed '{title}'")
-                return
-        print(f"'{title}' is not available.")
-
-    def return_book(self, title):
-        for book in self.books:
-            if book.title == title and book.return_book():
-                print(f"You returned '{title}'")
-                return
-        print(f"'{title}' was not borrowed.")
-
-# Example usage:
-'''library = Library()
-book1 = Book("The Great Gatsby", "F. Scott Fitzgerald")
-book2 = Book("To Kill a Mockingbird", "Harper Lee")
-library.add_book(book1)
-library.add_book(book2)
-library.display_available_books()
-library.borrow_book("The Great Gatsby")
-library.display_available_books()
-library.return_book("The Great Gatsby")
-library.display_available_books()'''
-Lib=Library()
-book1=Book("The Rich Dad","Robert")
-Lib.add_book(book1)
-Lib.display_available_books()
-Lib.borrow_book("The Rich Dad")
-Lib.return_book("The Rich Dad")
-Lib.display_available_books()
 
 class Complex:
     def __init__(self,real,img):
